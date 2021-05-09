@@ -9,20 +9,29 @@ class ChuteONumero:
         self.valor_aleatorio = 0
         self.valor_minimo = 1
         self.valor_maximo = 100
+        self.tentar_novamente = True
         
     def Iniciar(self):
         self.GerarNumeroAleatorio()
         self.PedirValorAleatorio()
-        if int(valor_do_chute) > self.valor_aleatorio:
-            print('Errou! Digite um número menor!')
-            self.PedirValorAleatorio()
-        elif int(valor_do_chute) < self.valor_aleatorio:
-            print('Errou Novamente! Digite um número maior!')
-            self.PedirValorAleatorio()
+        while self.tentar_novamente == True:
+            if int(self.valor_do_chute) > self.valor_aleatorio:
+                print('Errou! Digite um número menor!')
+                self.PedirValorAleatorio()
+            elif int(self.valor_do_chute) < self.valor_aleatorio:
+                print('Errou! Digite um número maior!')
+                self.PedirValorAleatorio()
+            self.tentar_novamente = False
+            print('Você Acertou!')
+        
         
     def PedirValorAleatorio(self):
         self.valor_do_chute = input('Chute um número: ')
         
         
     def GerarNumeroAleatorio(self):
-        self.valor_aleatorio = random.randint(self.valor_maximo, self.valor_minimo)
+        self.valor_aleatorio = random.randint(self.valor_minimo, self.valor_maximo)
+        
+        
+chute = ChuteONumero() # Lembrar sempre de chamar (instanciar) a classe!!!
+chute.Iniciar()
