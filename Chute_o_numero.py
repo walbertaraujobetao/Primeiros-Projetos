@@ -21,9 +21,9 @@ class ChuteONumero:
             elif int(self.valor_do_chute) < self.valor_aleatorio:
                 print('Errou! Digite um número maior!')
                 self.PedirValorAleatorio()
-            self.tentar_novamente = False
-            print('Você Acertou!')
-        
+            if int(self.valor_do_chute) == self.valor_aleatorio:
+                self.tentar_novamente = False
+                print('Você Acertou!')
         
     def PedirValorAleatorio(self):
         self.valor_do_chute = input('Chute um número: ')
