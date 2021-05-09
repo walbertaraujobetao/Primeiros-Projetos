@@ -21,5 +21,6 @@ class SimuladorDeDado:
         
         
 simulador = SimuladorDeDado() # sempre tem que ser inicializado
-simulador.Iniciar() # teste para o Github
+simulador.Iniciar() # teste para o Github, ok!!!!
+
 
