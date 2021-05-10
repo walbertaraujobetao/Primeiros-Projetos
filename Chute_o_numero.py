@@ -16,10 +16,10 @@ class ChuteONumero:
     def Iniciar(self):
         # layout
         layout = [
-            [sg.Text('Seu Palpite', size=(20,0))],
+            [sg.Text('Seu Palpite', size=(40,0))],
             [sg.Input(size=(18,0), key='ValorChute')],
             [sg.Button('Chutar!')],
-            [sg.Output(size=(20,10))]
+            [sg.Output(size=(40,10))]
         ]
         # criar uma janela
         self.janela = sg.Window('Seu Palpite', layout=layout) # cuidar com letras com maiúsculas!!!
@@ -34,18 +34,20 @@ class ChuteONumero:
                     while self.tentar_novamente == True:
                         if int(self.valor_do_chute) > self.valor_aleatorio:
                             print('Errou! Digite um número menor!')
-                            self.PedirValorAleatorio()
+                            break
                         elif int(self.valor_do_chute) < self.valor_aleatorio:
                             print('Errou! Digite um número maior!')
-                            self.PedirValorAleatorio()
+                            break
                         if int(self.valor_do_chute) == self.valor_aleatorio:
                             self.tentar_novamente = False
                             print('Você Acertou!')
+                            break
+                        
+                        
         except:
             print('Digite somente números!')
             self.Iniciar()
                     
-        
     def PedirValorAleatorio(self):
         self.valor_do_chute = input('Chute um número: ')
         
