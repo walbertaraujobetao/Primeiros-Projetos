@@ -2,7 +2,7 @@
 
 import random
 import PySimpleGUI as sg
-
+from time import sleep
 
 class DecidaPorMim:
     def __init__(self):
@@ -13,7 +13,6 @@ class DecidaPorMim:
             'Acho que está na hora certa!',
             'Talvez...'
         ]
-
     def Iniciar(self):
         # layout
         layout = [
@@ -23,13 +22,14 @@ class DecidaPorMim:
             [sg.Button('Decida por mim!')]
         ]
         # Criar janela
-        self.janela = sg.Window('Decida por mim!')
+        self.janela = sg.Window('Decida por mim!', layout=layout)
         # Ler os valores
         self.eventos, self.valores = self.janela.Read()
         # Fazer algo com so valores
         if self.eventos == 'Decida por mim!':
             print(random.choice(self.respostas))
-            self.janela.Close()
+            sleep(3)
+        self.janela.Close()
 
 decida = DecidaPorMim()
 decida.Iniciar()
