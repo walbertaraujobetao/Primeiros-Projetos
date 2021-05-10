@@ -1,6 +1,6 @@
 # projeto 3 - Chute o número
 # Objetivo: Criar um algorítimo que gera um valor aleatório, e o usuário tem que ir tentando
-# até acertar o número gerado pelo computador!
+# até acertar o número gerado pelo computador!!!!
 
 import random
 import PySimpleGUI as sg 
