@@ -42,6 +42,7 @@ class ChuteONumero:
                             self.tentar_novamente = False
                             print('Você Acertou!')
                             break
+                        self.janela.Close()
                         
                         
         except:
