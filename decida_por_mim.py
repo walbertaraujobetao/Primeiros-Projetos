@@ -2,7 +2,6 @@
 
 import random
 
-
 class DecidaPorMim:
     def __init__(self):
         self.respostas = [
@@ -16,7 +15,6 @@ class DecidaPorMim:
     def Iniciar(self):
         input('Faça sua pergunta: ')
         print(random.choice(self.respostas))
-
 
 decida = DecidaPorMim()
 decida.Iniciar()
