@@ -22,7 +22,7 @@ class ChuteONumero:
             [sg.Output(size=(20,10))]
         ]
         # criar uma janela
-        self.janela = sg.Window('Seu Palpite', layout=layout)
+        self.janela = sg.Window('Seu Palpite', layout=layout) # cuidar com letras com maiúsculas!!!
         self.GerarNumeroAleatorio()
         try: # no final sempre lembrar de tratar os erros
             while True:
